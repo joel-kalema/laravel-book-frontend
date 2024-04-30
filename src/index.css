@@ -1,13 +1,98 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+.home {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(27, 27, 27, 0.853), rgba(0, 0, 0, 0)),url("/public/home.jpg");
+  background-position: right;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --color-dark: #7a7878;
+  --color-light: #fff;
+  --color-brand: #452f08;
+  --font-fam: "Lato", sans-serif;
+  --height: 2rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+form {
+  position: relative;
+  width: 35%;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+}
+input,
+button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+}
+input[type="search"] {
+  outline: 0; 
+  width: 100%;
+  background: var(--color-light);
+  padding: 0 .4rem;
+  border-radius: var(--rad);
+  appearance: none;
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+  + button {
+    display: block;
+  }
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
