@@ -19,80 +19,32 @@ html{
 .home {
   position: relative;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(27, 27, 27, 0.853), rgba(0, 0, 0, 0)),url("/public/home.jpg");
+  background-image: linear-gradient(to right, rgba(27, 27, 27, 0.853), rgba(0, 0, 0, 0.596)),url("/public/home.jpg");
   background-position: right;
   background-size: cover;
   object-fit: cover;
   background-repeat: no-repeat;
 }
 
-:root {
-  --rad: 0.7rem;
-  --dur: 0.3s;
-  --color-dark: #7a7878;
-  --color-light: #fff;
-  --color-brand: #452f08;
-  --font-fam: "Lato", sans-serif;
-  --height: 2rem;
-  --btn-width: 6rem;
-  --bez: cubic-bezier(0, 0, 0.43, 1.49);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-form {
-  position: relative;
-  width: 35%;
-  background: var(--color-brand);
-  border-radius: var(--rad);
-}
 input,
-button {
-  height: var(--height);
-  font-family: var(--font-fam);
-  border: 0;
-  color: var(--color-dark);
-}
-input[type="search"] {
-  outline: 0; 
+textarea {
+  outline: none;
   width: 100%;
-  background: var(--color-light);
-  padding: 0 .4rem;
-  border-radius: var(--rad);
-  appearance: none;
-  transition: all var(--dur) var(--bez);
-  transition-property: width, border-radius;
-  z-index: 1;
-  position: relative;
+  border: none;
+  font-size: .8rem;
+  padding: .2rem;
+  color: #808dad;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px #808dad solid;
+  transition: 1s;
 }
-button {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: var(--btn-width);
-  font-weight: bold;
-  background: var(--color-brand);
-  border-radius: 0 var(--rad) var(--rad) 0;
-}
-input:not(:placeholder-shown) {
-  border-radius: var(--rad) 0 0 var(--rad);
-  width: calc(100% - var(--btn-width));
-  + button {
-    display: block;
-  }
-}
-label {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
+
+.stickyexample {
+  position: -webkit-sticky; /* for browser compatibility */
+  position: sticky;
+  top: 10px;
+  background-color: #33353d;
+  color: #b2b3dd;
+  max-height: 100vh;
   overflow: hidden;
 }
-
